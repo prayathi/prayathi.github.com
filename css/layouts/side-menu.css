@@ -1,6 +1,6 @@
 body {
     color: #777;
-	 font-family: Source Sans Pro;
+	 font-family: "Source Sans Pro", serif;
  	 font-size: 18pt;
 }
 
@@ -76,7 +76,13 @@ The content `<div>` is where all your content goes.
     font-weight: 300;
     color: #888;
 }
-
+.content .content-quote {
+    color: #666;
+    font-style: italic;
+    line-height: 1.8;
+    border-left: 5px solid #ddd;
+    padding-left: 1.5em;
+}
 
 
 /*
