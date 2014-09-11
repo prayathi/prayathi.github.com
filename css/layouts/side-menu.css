@@ -1,0 +1,334 @@
+body {
+    color: #777;
+	 font-family: "Source Sans Pro", serif;
+ 	 font-size: 18pt;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+        #layout.active #menu {
+            left: 150px;
+            width: 150px;
+        }
+
+        #layout.active .menu-link {
+            left: 150px;
+        }
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+     margin: 0;
+     color: #333;
+     text-align: center;     	 
+     border-bottom: 1px solid #eee;	 
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: bold;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #ccc;
+        padding: 0;
+        margin-top: 0;
+    }
+/* .indexHeaderImg{
+	background-image: url('../../Images/header.jpg');
+	background-position: 0 796px;
+}
+.servicesHeaderImg{
+	background-image: url('../../Images/servicesheader.jpg');
+	background-position: 0 722px;
+}
+.contactHeaderImg{
+	background-image: url('../../Images/contactheader.jpg');
+	background-position: 0 722px;
+} */
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #2BAFD6;
+}
+.content .content-quote {
+    color: #666;
+    font-style: italic;
+    line-height: 1.8;
+    border-left: 5px solid #EE6747;
+    padding-left: 1.5em;
+}
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -150px; /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #999;
+        border: none;
+        padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+        background: #2BAFD6;
+    }
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+        margin: 0;
+    }
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+    .menu-link:hover,
+    .menu-link:focus {
+        background: #000;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        padding-left: 150px; /* left col width "#menu" */
+        left: 0;
+    }
+    #menu {
+        left: 150px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 150px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+}
+#logo{
+  width:15px;
+  height:15px; 
+  background-color:transparent;  
+  border-radius:50%;
+  box-shadow: 
+    /*
+      orange - #EE6747
+      blue   - #2BAFD6
+    */
+    /*row 1*/
+    16px 1px 0 -2px #EE6747,
+    30px 3px 0 -3px #EE6747,
+    42px 6px 0 -3px #EE6747,
+    53px 10px 0 -3px #EE6747,
+    
+    /*row 2*/
+    0 16px 0 -1px #2BAFD6,
+    16px 16px 0 -1px #2BAFD6,
+    30px 17px 0 -2px #2BAFD6,
+    43px 19px 0 -2px #EE6747,
+    56px 21px 0 -3px #EE6747,
+    
+    /*row 3*/
+    0 32px 0 -1px #2BAFD6,
+    16px 32px 0 -1px #2BAFD6,
+    31px 32px 0 -2px #EE6747,
+    46px 32px 0 -2px #2BAFD6,
+    59px 32px 0 -3px #EE6747,
+    
+    /*row 4*/
+    0 48px 0 -1px #2BAFD6,        
+    17px 47px 0 -1px #EE6747,
+    32px 47px 0 -1px #2BAFD6,
+    48px 46px 0 -1px #2BAFD6,
+    62px 45px 0 -3px #EE6747,
+    
+    /*row 5*/
+    0 64px 0 #EE6747,
+    17px 63px 0 #2BAFD6,
+    34px 63px 0 -1px #2BAFD6,
+    50px 63px 0 -1px #2BAFD6,
+    
+    /*row 6 for shadow*/
+    0px 80px 8px -8px gray,
+    5px 80px 8px -6px gray,
+    10px 80px 6px -6px gray,
+    15px 80px 6px -6px gray,
+    20px 80px 6px -6px gray,
+    25px 80px 6px -6px gray,
+    30px 80px 6px -6px gray,
+    35px 80px 6px -6px gray,
+    40px 80px 8px -6px gray,
+    45px 80px 8px -6px gray
+    ;
+    
+  transform: skew(10deg,0deg);
+  
+}
+#content{
+	float: left;
+    height: 100px;
+    margin-top: 20px;
+    width: 100px; 
+}
+.logoHeader{
+	float: left;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+.Title{
+	color: #ee6747;
+    float: left;
+}
+.logoContent{
+	margin: auto; width: 315px;
+}
