@@ -55,13 +55,23 @@ The content `<div>` is where all your content goes.
 .header {
      margin: 0;
      color: #333;
+<<<<<<< HEAD
      text-align: center;     	 
      border-bottom: 1px solid #eee;	 
+=======
+     text-align: center;
+     padding: 2.5em 2em 0;
+     border-bottom: 1px solid #eee;
+>>>>>>> origin/master
  }
     .header h1 {
         margin: 0.2em 0;
         font-size: 3em;
+<<<<<<< HEAD
         font-weight: bold;
+=======
+        font-weight: 300;
+>>>>>>> origin/master
     }
      .header h2 {
         font-weight: 300;
@@ -69,6 +79,7 @@ The content `<div>` is where all your content goes.
         padding: 0;
         margin-top: 0;
     }
+<<<<<<< HEAD
 /* .indexHeaderImg{
 	background-image: url('../../Images/header.jpg');
 	background-position: 0 796px;
@@ -85,12 +96,23 @@ The content `<div>` is where all your content goes.
     margin: 50px 0 20px 0;
     font-weight: 300;
     color: #2BAFD6;
+=======
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+>>>>>>> origin/master
 }
 .content .content-quote {
     color: #666;
     font-style: italic;
     line-height: 1.8;
+<<<<<<< HEAD
     border-left: 5px solid #EE6747;
+=======
+    border-left: 5px solid #ddd;
+>>>>>>> origin/master
     padding-left: 1.5em;
 }
 
@@ -150,7 +172,11 @@ appears on the left side of the page.
     */
     #menu .pure-menu-selected,
     #menu .pure-menu-heading {
+<<<<<<< HEAD
         background: #2BAFD6;
+=======
+        background: #1f8dd6;
+>>>>>>> origin/master
     }
         /*
         This styles a link within a selected menu item `<li>`.
@@ -254,6 +280,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         left: 150px;
     }
 }
+<<<<<<< HEAD
 #logo{
   width:15px;
   height:15px; 
@@ -332,3 +359,5 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .logoContent{
 	margin: auto; width: 315px;
 }
+=======
+>>>>>>> origin/master
